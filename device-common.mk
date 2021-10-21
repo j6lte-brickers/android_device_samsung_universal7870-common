@@ -78,11 +78,12 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.service \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@2.0-service \
+    android.hardware.audio@5.0-impl \
+    android.hardware.audio.effect@5.0-impl \
     audio.a2dp.default \
     audio.usb.default \
+    audio.primary.universal7870_32 \
     audio.r_submix.default \
     libtinycompress 
 
@@ -113,27 +114,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.cas@1.2-service
 
-# BSP
-PRODUCT_PACKAGES += \
-    hwcomposer.exynos5 \
-    gralloc.exynos5 \
-    memtrack.exynos5 \
-    libcsc \
-    libexynosdisplay \
-    libexynosgscaler \
-    libExynosHWCService \
-    libexynosscaler \
-    libexynosutils \
-    libexynosv4l2 \
-    libhdmi \
-    libhwcutils \
-    libhwjpeg \
-    libion_exynos \
-    libmpp \
-    libstagefrighthw \
-    libvirtualdisplay \
-    
-
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
@@ -153,7 +133,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
     android.hardware.drm@1.0-service \
-    android.hardware.drm@1.2-service.clearkey
+    android.hardware.drm@1.3-service.clearkey
 
 # Flat device tree for boot image
 PRODUCT_HOST_PACKAGES += \
@@ -308,11 +288,6 @@ PRODUCT_PACKAGES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libnl
-
-# Call empty .mk files in the BSP sources as an existence check for them
-$(call inherit-product, hardware/samsung_slsi/exynos/empty.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos5/empty.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos7870/empty.mk)
 
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
