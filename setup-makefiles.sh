@@ -10,7 +10,7 @@ set -e
 DEVICE_COMMON=universal7870-common
 VENDOR=samsung
 
-export INITIAL_COPYRIGHT_YEAR=2017
+export INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -29,7 +29,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 
 # Warning headers and guards
-write_headers "a3y17lte a5y17lte a6lte j6lte j7velte j7xelte j7y17lte on7xelte"
+write_headers "j6lte"
 
 # The standard blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
